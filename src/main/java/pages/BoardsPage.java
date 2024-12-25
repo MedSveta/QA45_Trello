@@ -26,6 +26,16 @@ public class BoardsPage extends BasePage {
     @FindBy(xpath = "//span[@class='QMKgZFIlTLiEJN']")
     WebElement popUpMessageBoardDelete;
 
+    @FindBy(xpath = "//div[@class='B1uWdim9Jd0dJ9']")
+    WebElement btnAccount;
+    @FindBy(xpath = "//span[text()='Manage account']")
+    WebElement btnManageAccount;
+
+    public void openMyAccount(){
+        clickWait(btnAccount, 3);
+        btnManageAccount.click();
+    }
+
 
     public boolean validateUrl() {
         return new WebDriverWait(driver, 5).until(ExpectedConditions.urlContains("boards"));
