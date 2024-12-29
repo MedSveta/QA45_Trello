@@ -25,6 +25,8 @@ public class AtlassianProfilePage extends BasePage{
     WebElement btnUpload;
     @FindBy(xpath = "//div[@class='css-1748k3u']")
     WebElement popUpMessage;
+    @FindBy(xpath = "//h2[@class='css-1tqa3gm']")
+    WebElement popUpMessageWrongFormat;
 
 
     public void changeMyProfilePhoto(String photoPath){
@@ -42,5 +44,8 @@ public class AtlassianProfilePage extends BasePage{
 
     public boolean validateMessage(String text) {
       return validateTextInElementWait(popUpMessage, text, 5);
+    }
+    public boolean validateMessageWrongFormatMessage(String text) {
+        return validateTextInElementWait(popUpMessageWrongFormat, text, 5);
     }
 }
