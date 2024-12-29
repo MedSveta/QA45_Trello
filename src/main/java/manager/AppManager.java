@@ -27,7 +27,8 @@ public class AppManager {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(Method method) {
+        logger.info("stop tests --> "+method.getName());
         //if(driver!=null)
         //driver.quit();
     }

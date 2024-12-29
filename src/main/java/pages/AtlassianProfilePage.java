@@ -34,7 +34,7 @@ public class AtlassianProfilePage extends BasePage{
 
         Actions actions = new Actions(driver);
         actions.moveToElement(btnProfilePhoto).pause(5000).click().perform();
-        clickWait(btnChangeAvatar, 3);
+        clickWait(btnChangeAvatar, 5);
 
         File photo = new File(photoPath);
         System.out.println(photo.getAbsolutePath());
