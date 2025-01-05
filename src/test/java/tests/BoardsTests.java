@@ -6,13 +6,17 @@ import dto.User;
 import manager.AppManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.BoardsPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyBoardPage;
+import utils.TestNGListener;
 
 import static utils.RandomUtils.*;
+
+@Listeners(TestNGListener.class)
 
 public class BoardsTests extends AppManager {
 
@@ -23,7 +27,7 @@ public class BoardsTests extends AppManager {
         new LoginPage(getDriver()).login(user);
     }
 
-    @Test(invocationCount = 3)
+    @Test
     public void createNewBoardPositiveTest() {
         Board board = Board.builder().boardTitle(generateString(5)).build();
         new BoardsPage(getDriver()).createNewBoard(board);
